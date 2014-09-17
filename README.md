@@ -14,3 +14,10 @@ The script works by executing the following steps:<br>
 6. Extract mean and standard deviation for each measurement. Print a few initial rows of mean and standard deviation.<br>
 7. Create a second, independent tidy data set with the average of each variable for each activity and each subject<br>
 8. Write tidy data to a file<br>
+9. 
+
+<table>
+  <tr>
+    <tc>test</tc>
+  </tr>
+</table>
