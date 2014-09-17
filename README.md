@@ -14,10 +14,26 @@ The script works by executing the following steps:<br>
 6. Extract mean and standard deviation for each measurement. Print a few initial rows of mean and standard deviation.<br>
 7. Create a second, independent tidy data set with the average of each variable for each activity and each subject<br>
 8. Write tidy data to a file<br>
-9. 
 
-<table>
+For information about each variable see - Codebook.md
+
+<table style="width:100%">
   <tr>
-    <tc>test</tc>
+    <td>Goal</td>
+    <td>Tasks Executed</td> 
+  </tr>
+  <tr>
+    <td>Collect data</td>
+    <td>
+    1. Load required libraries<br>
+    2. Read all data files into R data.tables.<br>
+    </td> 
+  </tr>
+  <tr>
+    <td>Work with data</td>
+    <td>
+    1. Load required libraries<br>
+    2. Read all data files into R data.tables.<br>
+    </td> 
   </tr>
 </table>
