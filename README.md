@@ -16,24 +16,3 @@ The script works by executing the following steps:<br>
 8. Write tidy data to a file<br>
 
 For information about each variable see - Codebook.md
-
-<table style="width:100%">
-  <tr>
-    <td>Goal</td>
-    <td>Tasks Executed</td> 
-  </tr>
-  <tr>
-    <td>Collect data</td>
-    <td>
-    1. Load required libraries<br>
-    2. Read all data files into R data.tables.<br>
-    </td> 
-  </tr>
-  <tr>
-    <td>Work with data</td>
-    <td>
-    1. Load required libraries<br>
-    2. Read all data files into R data.tables.<br>
-    </td> 
-  </tr>
-</table>
