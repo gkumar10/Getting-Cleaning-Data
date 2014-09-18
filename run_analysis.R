@@ -1,18 +1,17 @@
 #load libraries
 library(reshape2)
-library(data.table)
 
 # read all files into tables
-Xtest <- read.table("~/Coursera/UCI HAR Dataset/test/X_test.txt")
-Xtrain <- read.table("~/Coursera/UCI HAR Dataset/train/X_train.txt")
-features <- read.table("~/Coursera/UCI HAR Dataset/features.txt")
-activity_labels <- read.table("~/Coursera/UCI HAR Dataset/activity_labels.txt")
-train_labels <- read.table("~/Coursera/UCI HAR Dataset/train/y_train.txt")
-test_labels <- read.table("~/Coursera/UCI HAR Dataset/test/y_test.txt")
-test_subject <- read.table("~/Coursera/UCI HAR Dataset/test/subject_test.txt")
-train_subject <- read.table("~/Coursera/UCI HAR Dataset/train/subject_train.txt")
+Xtest <- read.table("~/UCI HAR Dataset/test/X_test.txt")
+Xtrain <- read.table("~/UCI HAR Dataset/train/X_train.txt")
+features <- read.table("~/UCI HAR Dataset/features.txt")
+activity_labels <- read.table("~/UCI HAR Dataset/activity_labels.txt")
+train_labels <- read.table("~/UCI HAR Dataset/train/y_train.txt")
+test_labels <- read.table("~/UCI HAR Dataset/test/y_test.txt")
+test_subject <- read.table("~/UCI HAR Dataset/test/subject_test.txt")
+train_subject <- read.table("~/UCI HAR Dataset/train/subject_train.txt")
 
-#attach colummn labels to Xtrain and Xtest data set
+#attach descriptive colummn labels to Xtrain and Xtest data set
 names(Xtest) <- features$V2
 names(Xtrain) <- features$V2
 
@@ -20,7 +19,7 @@ names(Xtrain) <- features$V2
 train_labels[,2] <- activity_labels$V2[train_labels[,1]]
 test_labels[,2] <- activity_labels$V2[test_labels[,1]]
 
-#update column labels. course project objective #4
+#update descriptive column labels. course project objective #4
 names(test_labels) <- c("activity-ID", "activity-Label")
 names(train_labels) <- c("activity-ID", "activity-Label")
 names(test_subject) <- "subject"
@@ -40,8 +39,8 @@ head(master_data[,extract_mean])
 head(master_data[,extract_std])
 
 #create a second, independent tidy data set with the average of each variable for each activity and each subject. course project objective #5
-m <- melt(master_data, id = 1:3, measure.vars = 4:564, na.rm=TRUE)
+m <- melt(master_data, id = 1:3, measure.vars = 4:564)
 tidy_data <- dcast(m, subject + "activity-Label" ~ variable, mean)
 
 #write tidy_data to file
-write.table(tidy_data, "~/Coursera/Getting-Cleaning-Data/tidy_data.txt", row.names=FALSE)
+write.table(tidy_data, "~/tidy_data.txt", row.names=FALSE)
